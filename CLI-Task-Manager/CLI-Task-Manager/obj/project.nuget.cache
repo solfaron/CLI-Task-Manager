@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "YNMIpvh7f5c=",
+  "dgSpecHash": "J8We6WiDLZM=",
   "success": true,
-  "projectFilePath": "/home/igruk-mini/Projects/CLI-Task-Manager/CLI-Task-Manager/CLI-Task-Manager/CLI-Task-Manager.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "/home/igruk/Projects/CLI-Task-Manager/CLI-Task-Manager/CLI-Task-Manager/CLI-Task-Manager.csproj",
+  "expectedPackageFiles": [
+    "/home/igruk/.nuget/packages/microsoft.aspnetcore.app.ref/10.0.11/microsoft.aspnetcore.app.ref.10.0.11.nupkg.sha512"
+  ],
   "logs": []
 }

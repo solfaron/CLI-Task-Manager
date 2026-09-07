@@ -1,0 +1,15 @@
+/home/igruk/Projects/CLI-Task-Manager/CLI-Task-Manager/CLI-Task-Manager/bin/Debug/net10.0/CLI-Task-Manager
+/home/igruk/Projects/CLI-Task-Manager/CLI-Task-Manager/CLI-Task-Manager/bin/Debug/net10.0/CLI-Task-Manager.deps.json
+/home/igruk/Projects/CLI-Task-Manager/CLI-Task-Manager/CLI-Task-Manager/bin/Debug/net10.0/CLI-Task-Manager.runtimeconfig.json
+/home/igruk/Projects/CLI-Task-Manager/CLI-Task-Manager/CLI-Task-Manager/bin/Debug/net10.0/CLI-Task-Manager.dll
+/home/igruk/Projects/CLI-Task-Manager/CLI-Task-Manager/CLI-Task-Manager/bin/Debug/net10.0/CLI-Task-Manager.pdb
+/home/igruk/Projects/CLI-Task-Manager/CLI-Task-Manager/CLI-Task-Manager/obj/Debug/net10.0/CLI-Task-Manager.GeneratedMSBuildEditorConfig.editorconfig
+/home/igruk/Projects/CLI-Task-Manager/CLI-Task-Manager/CLI-Task-Manager/obj/Debug/net10.0/CLI-Task-Manager.AssemblyInfoInputs.cache
+/home/igruk/Projects/CLI-Task-Manager/CLI-Task-Manager/CLI-Task-Manager/obj/Debug/net10.0/CLI-Task-Manager.AssemblyInfo.cs
+/home/igruk/Projects/CLI-Task-Manager/CLI-Task-Manager/CLI-Task-Manager/obj/Debug/net10.0/CLI-Task-Manager.csproj.CoreCompileInputs.cache
+/home/igruk/Projects/CLI-Task-Manager/CLI-Task-Manager/CLI-Task-Manager/obj/Debug/net10.0/CLI-Task-Manager.sourcelink.json
+/home/igruk/Projects/CLI-Task-Manager/CLI-Task-Manager/CLI-Task-Manager/obj/Debug/net10.0/CLI-Task-Manager.dll
+/home/igruk/Projects/CLI-Task-Manager/CLI-Task-Manager/CLI-Task-Manager/obj/Debug/net10.0/refint/CLI-Task-Manager.dll
+/home/igruk/Projects/CLI-Task-Manager/CLI-Task-Manager/CLI-Task-Manager/obj/Debug/net10.0/CLI-Task-Manager.pdb
+/home/igruk/Projects/CLI-Task-Manager/CLI-Task-Manager/CLI-Task-Manager/obj/Debug/net10.0/CLI-Task-Manager.genruntimeconfig.cache
+/home/igruk/Projects/CLI-Task-Manager/CLI-Task-Manager/CLI-Task-Manager/obj/Debug/net10.0/ref/CLI-Task-Manager.dll
