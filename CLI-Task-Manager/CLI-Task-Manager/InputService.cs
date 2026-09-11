@@ -4,12 +4,6 @@ namespace CLI_Task_Manager;
 
 public class InputService
 {
-    private readonly HashSet<string> commandNames = new HashSet<string>()
-    {
-        "add", "update", "delete",
-        "mark-in-progress", "mark-done", "list"
-    };
-    
     public static Command CheckCommand(string[] args2)
     {
         Command returnCommand = new Command();
@@ -20,46 +14,31 @@ public class InputService
             return returnCommand;
         }
         
-        string CommandName = args2[0];
+        string commandName = args2[0];
         int id = 0;
-        string text = "";
-        switch (CommandName)
+        bool isValid = commandName switch
         {
-            case "add":
-                if (args2.Length == 2)
-                {
-                    text = args2[1];
-                }
-                break;
-            case "update":
-                if (args2.Length == 3 && int.TryParse(args2[1], out id))
-                {
-                    text = args2[2];
-                }
-                break;
-
-            case "delete":
-            case "mark-in-progress":
-            case "mark-done":
-                if (args2.Length == 2 && int.TryParse(args2[1], out id))
-                {
-                    id = int.Parse(args2[1]);
-                }
-                break;
-            case "list":
-                if (args2.Length == 2)
-                {
-                    text = args2[1];
-                }
-                break;
-            default:
-            {
-                returnCommand.CommandName = "invalid";
-                break;
-            }
-                
-        }
+            "add" => args2.Length == 2,
+            "update" => args2.Length == 3 && int.TryParse(args2[1], out id),
+            "delete" or "mark-in-progress" or "mark-done" => args2.Length == 2 && int.TryParse(args2[1], out id),
+            "list" => args2.Length is 1 or 2,
+            _ => false 
+        };
         
+        if (!isValid)
+        {
+            returnCommand.CommandName = "invalid";
+            return returnCommand;
+        }
+
+        string text = commandName switch
+        {
+            "list" or "add" when args2.Length == 2 => args2[1],
+            "update" when args2.Length == 3 => args2[2],
+            _ => "" //List with 1 element also goes into this
+        };
+
+        returnCommand.CommandName = commandName;
         returnCommand.Id = id;
         returnCommand.Text = text;
         
