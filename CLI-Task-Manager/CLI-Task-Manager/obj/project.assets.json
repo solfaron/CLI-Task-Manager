@@ -1,5 +1,5 @@
 {
-  "version": 3,
+  "version": 4,
   "targets": {
     "net10.0": {}
   },
@@ -8,19 +8,19 @@
     "net10.0": []
   },
   "packageFolders": {
-    "/home/igruk/.nuget/packages/": {}
+    "/home/igruk-mini/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/igruk/Projects/CLI-Task-Manager/CLI-Task-Manager/CLI-Task-Manager/CLI-Task-Manager.csproj",
+      "projectUniqueName": "/home/igruk-mini/Projects/CLI-Task-Manager/CLI-Task-Manager/CLI-Task-Manager/CLI-Task-Manager.csproj",
       "projectName": "CLI-Task-Manager",
-      "projectPath": "/home/igruk/Projects/CLI-Task-Manager/CLI-Task-Manager/CLI-Task-Manager/CLI-Task-Manager.csproj",
-      "packagesPath": "/home/igruk/.nuget/packages/",
-      "outputPath": "/home/igruk/Projects/CLI-Task-Manager/CLI-Task-Manager/CLI-Task-Manager/obj/",
+      "projectPath": "/home/igruk-mini/Projects/CLI-Task-Manager/CLI-Task-Manager/CLI-Task-Manager/CLI-Task-Manager.csproj",
+      "packagesPath": "/home/igruk-mini/.nuget/packages/",
+      "outputPath": "/home/igruk-mini/Projects/CLI-Task-Manager/CLI-Task-Manager/CLI-Task-Manager/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/home/igruk/.nuget/NuGet/NuGet.Config"
+        "/home/igruk-mini/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net10.0"
@@ -45,7 +45,7 @@
         "auditLevel": "low",
         "auditMode": "all"
       },
-      "SdkAnalysisLevel": "10.0.100"
+      "SdkAnalysisLevel": "10.0.400"
     },
     "frameworks": {
       "net10.0": {
@@ -62,18 +62,12 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
-        "downloadDependencies": [
-          {
-            "name": "Microsoft.AspNetCore.App.Ref",
-            "version": "[10.0.12, 10.0.12]"
-          }
-        ],
         "frameworkReferences": {
           "Microsoft.NETCore.App": {
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/10.0.112/PortableRuntimeIdentifierGraph.json",
+        "runtimeIdentifierGraphPath": "/opt/dotnet/sdk/10.0.400/PortableRuntimeIdentifierGraph.json",
         "packagesToPrune": {
           "Microsoft.CSharp": "(,4.7.32767]",
           "Microsoft.VisualBasic": "(,10.4.32767]",
