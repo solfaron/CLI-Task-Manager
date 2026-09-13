@@ -1,14 +1,12 @@
 ﻿using CLI_Task_Manager;
+using Task = CLI_Task_Manager.Task;
 
 class Program
 {
-    TaskList taskList = new TaskList();
 
     public static void Main(string[] args2)
     {
-        Console.WriteLine("Welcome to CLI Task Manager");
-        
-        
-        
+       CommandRouter.RouteCommand(CommandParser.CheckCommand(args2));
+       
     }
 }

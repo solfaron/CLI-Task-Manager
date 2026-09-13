@@ -2,7 +2,7 @@ using System.ComponentModel;
 
 namespace CLI_Task_Manager;
 
-public class InputService
+public class CommandParser
 {
     public static Command CheckCommand(string[] args2)
     {

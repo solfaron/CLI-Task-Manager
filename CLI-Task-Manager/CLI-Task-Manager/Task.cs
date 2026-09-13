@@ -2,7 +2,18 @@ namespace CLI_Task_Manager;
 
 public class Task
 {
-    public int Id { get; set; }
+    public int Id
+    {
+        get;
+        set
+        {
+            if (value <= 0)
+            {
+                throw new ArgumentOutOfRangeException();
+            }
+        }
+    }
+
     public string Description { get; set; }
     public Status Status { get; set; }
     public DateTime CreatedAt { get; set; }
@@ -20,5 +31,10 @@ public class Task
         Status = status;
         CreatedAt = createdAt;
         UpdatedAt = updatedAt;
+    }
+
+    public override string ToString()
+    {
+        return $"[{Id}] Task: {Description}; Status: {Status}; Created at: {CreatedAt}; Updated at: {UpdatedAt}";
     }
 }

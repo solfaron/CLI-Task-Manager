@@ -10,7 +10,7 @@ public class TaskJsonService
         File.WriteAllText("tasks.json",json);
     }
     
-    public static List<Task> LoadTaskList(List<Task> taskList)
+    public static List<Task> LoadTaskList()
     {
         if (!File.Exists("tasks.json"))
         {
@@ -18,7 +18,7 @@ public class TaskJsonService
             return new List<Task>();
         }
 
-        taskList = JsonSerializer.Deserialize<List<Task>>(File.ReadAllText(@"tasks.json"));
+        var taskList = JsonSerializer.Deserialize<List<Task>>(File.ReadAllText(@"tasks.json"));
         return taskList;
     }
 }
