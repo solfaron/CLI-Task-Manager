@@ -4,9 +4,6 @@ public class UpdateCommand
 {
     public static string UpdateTask(Command command)
     {
-        if (command.Id < 1)
-        {
-            return 
-        }
+        return TaskRepositoryService.UpdateTask(command.Id, command.Text);
     }
 }

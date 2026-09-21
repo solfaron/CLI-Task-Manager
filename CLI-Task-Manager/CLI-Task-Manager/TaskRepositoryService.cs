@@ -11,14 +11,14 @@ public class TaskRepositoryService
 
     public static List<Task> FilterTaskList(Status? filter)
     {
-        List<Task> tasks = GetTaskList();
+        List<Task> filteredTasks = TaskList;
         
         if (filter != null)
         {
-            tasks = TaskList.Where(task => task.Status == filter ).ToList();
+            filteredTasks = TaskList.Where(task => task.Status == filter ).ToList();
         }
         
-        return tasks;
+        return filteredTasks;
     }
     
     public static string AddTask(string desc)
@@ -41,6 +41,28 @@ public class TaskRepositoryService
 
     public static string UpdateTask(int id, string desc)
     {
-        
+        Task searchTask = TaskList.FirstOrDefault(x => x.Id == id);
+        if (searchTask != null)
+        {
+            searchTask.Description = desc;
+            searchTask.UpdatedAt = DateTime.UtcNow;
+            TaskJsonService.SaveTaskList(TaskList);
+            return $"Task updated with id:{id}";
+        }
+
+        return $"Task with such id not found";
+    }
+
+    public static string DeleteTask(int id)
+    {
+        Task searchTask = TaskList.FirstOrDefault(x => x.Id == id);
+        if (searchTask != null)
+        {
+            TaskList.Remove(searchTask);
+            TaskJsonService.SaveTaskList(TaskList);
+            return $"Task with id[{id}] successfully deleted!";
+        }
+
+        return $"Task with such id not found";
     }
 }
