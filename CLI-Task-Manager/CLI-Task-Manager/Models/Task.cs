@@ -2,17 +2,7 @@ namespace CLI_Task_Manager;
 
 public class Task
 {
-    public int Id
-    {
-        get;
-        set
-        {
-            if (value <= 0)
-            {
-                throw new ArgumentOutOfRangeException();
-            }
-        }
-    }
+    public int Id { get; set; }
 
     public string Description { get; set; }
     public Status Status { get; set; }

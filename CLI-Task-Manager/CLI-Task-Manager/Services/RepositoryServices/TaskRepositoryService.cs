@@ -41,7 +41,7 @@ public class TaskRepositoryService
 
     public static string UpdateTask(int id, string desc)
     {
-        Task searchTask = TaskList.FirstOrDefault(x => x.Id == id);
+        Task? searchTask = TaskList.FirstOrDefault(x => x.Id == id);
         if (searchTask != null)
         {
             searchTask.Description = desc;
@@ -55,7 +55,7 @@ public class TaskRepositoryService
 
     public static string DeleteTask(int id)
     {
-        Task searchTask = TaskList.FirstOrDefault(x => x.Id == id);
+        Task? searchTask = TaskList.FirstOrDefault(x => x.Id == id);
         if (searchTask != null)
         {
             TaskList.Remove(searchTask);
@@ -65,4 +65,20 @@ public class TaskRepositoryService
 
         return $"Task with such id not found";
     }
+
+    public static string MarkTask(int id, Status status)
+    {
+        Task? searchTask = TaskList.FirstOrDefault(x => x.Id == id);
+        if (searchTask == null)
+        {
+            return $"Task with such id not found";
+        }
+
+        searchTask.Status = status;
+        searchTask.UpdatedAt = DateTime.UtcNow;
+        TaskJsonService.SaveTaskList(TaskList);
+        return $"Task with id:{id} successfully marked as {status}!";
+    }
+
+    
 }

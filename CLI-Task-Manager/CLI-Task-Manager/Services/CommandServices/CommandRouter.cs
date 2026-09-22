@@ -8,8 +8,11 @@ public class CommandRouter
         new Dictionary<string,Func<Command, string>>()
         {
             ["list"] = ListCommand.ListTasks,
-            
-            
+            ["delete"] = DeleteCommand.DeleteTask,
+            ["update"] = UpdateCommand.UpdateTask,
+            ["add"] = AddCommand.AddTask,
+            ["mark-in-progress"] = MarkCommand.MarkStatus,
+            ["mark-done"] = MarkCommand.MarkStatus
         };
     
     public static void RouteCommand(Command command)
