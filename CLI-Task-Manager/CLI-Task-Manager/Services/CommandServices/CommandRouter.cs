@@ -24,7 +24,7 @@ public class CommandRouter
                 string output = executeMethod(command);
                 Console.WriteLine(output);
             }
-            catch (Exception e)
+            catch (Exception e)     
             {
                 Console.WriteLine("Error: " + e.Message);
             }

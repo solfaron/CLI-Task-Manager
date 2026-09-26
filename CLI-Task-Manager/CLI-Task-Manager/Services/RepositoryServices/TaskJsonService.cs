@@ -9,16 +9,37 @@ public class TaskJsonService
         string json = JsonSerializer.Serialize(taskList);
         File.WriteAllText("tasks.json",json);
     }
-    
+
     public static List<Task> LoadTaskList()
     {
+        var taskList = new List<Task>();
+
         if (!File.Exists("tasks.json"))
         {
-            Console.WriteLine("No tasks file found. Load current tasks list if it exists.");
-            return new List<Task>();
+            return taskList;
         }
 
-        var taskList = JsonSerializer.Deserialize<List<Task>>(File.ReadAllText(@"tasks.json"));
+        try
+        {
+            taskList = JsonSerializer.Deserialize<List<Task>>(File.ReadAllText(@"tasks.json"));
+        }
+        catch (JsonException)
+        {
+            throw new CorruptedTaskDataException("Corrupted task data: incorrect data in file");
+        }
+
+        if (taskList == null)
+        {
+            throw new CorruptedTaskDataException("Corrupted task data: null in file. Are you serious?");    
+        }
+
+        List<Task> list = taskList.Where(x => x.Description == null || x.CreatedAt == default).ToList();
+        
+        if (list.Count != 0)
+        {
+            throw new CorruptedTaskDataException("Corrupted task data: incorrect data in file");
+        }
+        
         return taskList;
     }
 }
