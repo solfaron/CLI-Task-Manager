@@ -10,13 +10,13 @@ public class CommandParser
         
         if (args2.Length == 0 || args2.Length > 3)
         {
-            returnCommand.CommandName = "invalid";
+            returnCommand.ErrorMessage = "Invalid amount of arguments.";
             return returnCommand;
         }
         
         string commandName = args2[0];
         int id = 0;
-        bool isValid = commandName switch
+        bool isValidCommand = commandName switch
         {
             "add" => args2.Length == 2,
             "update" => args2.Length == 3 && int.TryParse(args2[1], out id),
@@ -25,9 +25,11 @@ public class CommandParser
             _ => false 
         };
         
-        if (!isValid)
+        returnCommand.CommandName = commandName;
+
+        if (!isValidCommand)
         {
-            returnCommand.CommandName = "invalid";
+            returnCommand.ErrorMessage = "Invalid arguments.";
             return returnCommand;
         }
 
@@ -37,8 +39,7 @@ public class CommandParser
             "update" when args2.Length == 3 => args2[2],
             _ => "" //List with 1 element also goes into this
         };
-
-        returnCommand.CommandName = commandName;
+        
         returnCommand.Id = id;
         returnCommand.Text = text;
         

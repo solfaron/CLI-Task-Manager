@@ -17,22 +17,26 @@ public class CommandRouter
     
     public static void RouteCommand(Command command)
     {
-        if (CommandDictionary.TryGetValue(command.CommandName, out Func<Command, string> executeMethod))
+        if (!CommandDictionary.TryGetValue(command.CommandName, out Func<Command, string> executeMethod))
+        {
+            Console.WriteLine("Unknown command: " + command.CommandName);
+        }
+        else if (command.ErrorMessage != null)
+        {
+            Console.WriteLine("Error: " + command.ErrorMessage);
+        }
+        else
         {
             try
             {
                 string output = executeMethod(command);
                 Console.WriteLine(output);
             }
-            catch (Exception e)     
+            catch (Exception e)
             {
                 Console.WriteLine("Error: " + e.Message);
             }
-
         }
-        else
-        {
-            Console.WriteLine("Command is incorrect");
-        }
+        
     }
 }
