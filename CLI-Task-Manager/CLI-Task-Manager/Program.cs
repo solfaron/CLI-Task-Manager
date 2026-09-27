@@ -14,6 +14,17 @@ class Program
             Console.WriteLine("mark-[in-progress/done]");
             return;
         }
+
+        try
+        {
+            TaskRepositoryService.Initialize();
+        }
+        catch (CorruptedTaskDataException e)
+        {
+            Console.WriteLine(e.Message);
+            Environment.Exit(1);
+        } 
+        
         CommandRouter.RouteCommand(CommandParser.CheckCommand(args2));
     }
 }

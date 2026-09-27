@@ -32,7 +32,7 @@ public class CommandRouter
         }
         else
         {
-            Console.WriteLine("Command not found");
+            Console.WriteLine("Command is incorrect");
         }
     }
 }

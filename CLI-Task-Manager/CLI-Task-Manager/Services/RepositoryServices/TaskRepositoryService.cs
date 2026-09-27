@@ -2,11 +2,11 @@ namespace CLI_Task_Manager;
 
 public class TaskRepositoryService
 {
-    public static List<Task> TaskList = GetTaskList();
+    private static List<Task> TaskList;
 
-    public static List<Task> GetTaskList()
+    public static void Initialize()
     {
-        return TaskJsonService.LoadTaskList();    
+        TaskList = TaskJsonService.LoadTaskList();
     }
 
     public static List<Task> FilterTaskList(Status? filter)
